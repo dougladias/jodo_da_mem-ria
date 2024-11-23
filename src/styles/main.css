@@ -1,0 +1,115 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #A7C7E7, #D0A1D3, #A2D9C7, #F0F4F8);
+    user-select: none;
+
+}
+
+.logo-img{
+    margin-left: -17px;
+    width: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    
+
+.img{
+    width: 520px;             
+    border-radius: 15px;
+    margin: 20px;
+       
+}
+
+.conteiner{
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background: linear-gradient(
+        325deg,
+        #03001e 0%,        
+        #5f0a8f 30%,
+        #ec38bc 60%,
+        #fdeff9 100%
+    );
+    padding: 40px 60px;
+}
+
+.reset{
+    padding: 15px 20px;
+    width: 100%;
+    color: #000;
+    background: #ffffff;
+    border: none;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.reset:hover{
+    color: #000000;
+    background-color: #ff0000;
+}
+
+.reset:focus{
+    color: #ec38bc;
+    background-color: #262809;
+}
+
+.game{
+    justify-content: center;
+    align-items: center;
+    width: 550px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    transform-style: preserve-3d;
+    perspective: 500px;    
+}   
+
+.item{
+    position: relative;
+    width: 100px;
+    height: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fafafa;
+    font-size: 3em;
+    transform: rotateY(180deg);
+    transition: 0.25s;
+    border-radius: 8px;
+}
+
+.item::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #404040;
+    /* opacity: 0.85; */
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+    border-radius: 6px;
+    
+}
+
+.item.boxOpen{
+    transform: rotateY(0deg);    
+}
+
+.boxOpen::after, 
+.boxMatch::after {
+    transform: rotateY(180deg);
+}
